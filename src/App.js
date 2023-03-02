@@ -45,7 +45,7 @@ class App extends Component {
 	}
 
 	componentDidMount(){
-		fetch('https://secret-lake-59536.herokuapp.com/')
+		fetch('https://app-cf287ff9-6508-4e76-952d-4f73c5d518eb.cleverapps.io/')
 		.then(response => response.json())
 		.then(console.log)
 	}
@@ -77,7 +77,7 @@ class App extends Component {
 
 	onButtonSubmit = () => {
 		this.setState({imageUrl: this.state.input})
-		fetch('https://secret-lake-59536.herokuapp.com/imageurl',{
+		fetch('https://app-cf287ff9-6508-4e76-952d-4f73c5d518eb.cleverapps.io/imageurl',{
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
@@ -87,7 +87,7 @@ class App extends Component {
 		.then(response => response.json())
 		.then(response => {
 			if(response){
-				fetch('https://secret-lake-59536.herokuapp.com/image',{
+				fetch('https://app-cf287ff9-6508-4e76-952d-4f73c5d518eb.cleverapps.io/image',{
 					method: 'put',
 					headers: {'Content-Type': 'application/json'},
 					body: JSON.stringify({
