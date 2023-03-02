@@ -23,7 +23,7 @@ class Register extends React.Component {
 	}
 
 	onSubmitSignIn = () => {
-		fetch('https://secret-lake-59536.herokuapp.com/register',{
+		fetch('https://app-cf287ff9-6508-4e76-952d-4f73c5d518eb.cleverapps.io/register',{
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
@@ -34,7 +34,7 @@ class Register extends React.Component {
 		})
 			.then(response => response.json())
 			.then(user => {
-				if(user.id){
+				if(true){
 					this.props.loadUser(user)
 					this.props.onRouteChange('home')
 				}
