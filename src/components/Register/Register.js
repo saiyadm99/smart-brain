@@ -23,7 +23,7 @@ class Register extends React.Component {
 	}
 
 	onSubmitSignIn = () => {
-		fetch('https://app-cf287ff9-6508-4e76-952d-4f73c5d518eb.cleverapps.io/register',{
+		fetch('https://wild-rose-dibbler-gear.cyclic.app/register',{
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
