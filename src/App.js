@@ -44,12 +44,6 @@ class App extends Component {
 		})
 	}
 
-	componentDidMount(){
-		fetch('https://app-cf287ff9-6508-4e76-952d-4f73c5d518eb.cleverapps.io/')
-		.then(response => response.json())
-		.then(console.log)
-	}
-
 	calculateFaceLocation = (data) => {
 		const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
 		const image = document.getElementById('inputimage');
@@ -77,7 +71,7 @@ class App extends Component {
 
 	onButtonSubmit = () => {
 		this.setState({imageUrl: this.state.input})
-		fetch('https://app-cf287ff9-6508-4e76-952d-4f73c5d518eb.cleverapps.io/imageurl',{
+		fetch('https://wild-rose-dibbler-gear.cyclic.app/imageurl',{
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
@@ -87,7 +81,7 @@ class App extends Component {
 		.then(response => response.json())
 		.then(response => {
 			if(response){
-				fetch('https://app-cf287ff9-6508-4e76-952d-4f73c5d518eb.cleverapps.io/image',{
+				fetch('https://wild-rose-dibbler-gear.cyclic.app/image',{
 					method: 'put',
 					headers: {'Content-Type': 'application/json'},
 					body: JSON.stringify({
