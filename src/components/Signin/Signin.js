@@ -18,7 +18,7 @@ class Signin extends React.Component {
 	}
 
 	onSubmitSignIn = () => {
-		fetch('https://app-cf287ff9-6508-4e76-952d-4f73c5d518eb.cleverapps.io/signin', {
+		fetch('https://wild-rose-dibbler-gear.cyclic.app/signin', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
@@ -28,15 +28,17 @@ class Signin extends React.Component {
 		})
 			.then(response => response.json())
 			.then(user => {
-				if(true){
+				if(user.id){
 					this.props.loadUser(user)
 					this.props.onRouteChange('home');
+				}else{
+					alert(user)
 				}
 			})
 	}
 
 	render(){
-		const {onRouteChange} = this.props;
+		//const {onRouteChange} = this.props;
 		return (
 			<article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
 				<main className="pa4 black-80">
